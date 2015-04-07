@@ -28,7 +28,6 @@ public class RegisterUser extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
         registration.registerNewUser(request);
-        registration.addUserToSession(request);
 	
         response.sendRedirect("TestShowcase");
 		

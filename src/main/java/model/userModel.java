@@ -1,6 +1,10 @@
 package model;
 
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+
 public class userModel {
 
     String username;
@@ -42,6 +46,14 @@ public class userModel {
 	
     public void setRole(String role) {
 	this.role = role;
-    }		
+    }
+    
+    public void addUserToSession(HttpServletRequest request){
+        HttpSession session = request.getSession();
+            
+        session.setAttribute("username", this.username);
+        session.setAttribute("email", this.email);
+        session.setAttribute("role", this.role);
+    }    
 	
 }
