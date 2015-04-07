@@ -3,6 +3,10 @@
     <servlet>
         <servlet-name>RegisterUser</servlet-name>
         <servlet-class>servlets.RegisterUser</servlet-class>
+    </servlet>    
+    <servlet>
+        <servlet-name>LoginUser</servlet-name>
+        <servlet-class>servlets.LoginUser</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>TestShowcase</servlet-name>
@@ -11,6 +15,10 @@
     <servlet-mapping>
         <servlet-name>RegisterUser</servlet-name>
         <url-pattern>/RegisterUser</url-pattern>
+    </servlet-mapping>    
+    <servlet-mapping>
+        <servlet-name>LoginUser</servlet-name>
+        <url-pattern>/LoginUser</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TestShowcase</servlet-name>

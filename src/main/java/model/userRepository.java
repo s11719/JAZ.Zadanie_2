@@ -13,20 +13,17 @@ public class userRepository {
     public userRepository(){
         this.userRepository = new HashMap<String, userModel>();
     }
-
 	
     public void addUser(String username, userModel user, HttpServletRequest request){ 
         this.userRepository.put(username, user);
         
         ServletContext context = request.getServletContext(); 
         context.setAttribute("userRepository", this.userRepository);
-    }
-		
+    }		
 
     public HashMap<String, userModel> getUserRepository() {
 	return userRepository;
     }
-
 
     public void setUserRepository(HashMap<String, userModel> userRepository) {
 	this.userRepository = userRepository;

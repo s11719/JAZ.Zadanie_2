@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class RegisterUser extends HttpServlet {
+public class LoginUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    Register registration = new Register();
+    Login login = new Login();
     
-    public RegisterUser() {
+    public LoginUser() {
         super();        
     }
 	
@@ -25,7 +25,7 @@ public class RegisterUser extends HttpServlet {
 	
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-        registration.registerNewUser(request);
+        login.loginUser(request);
 	
         response.sendRedirect("TestShowcase");		
     }

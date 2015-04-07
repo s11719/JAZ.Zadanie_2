@@ -24,17 +24,17 @@
 </p>
 
 <p>	
-<form action = "" method = "post">
+<form action = "LoginUser" method = "post">
 
 	<table cellpadding="10"><tr>
 		<td>Your login:</td>
 			<td>
-				<input type="text" name="login" />
+				<input type="text" name="username" />
 			</td>
 		</tr><tr>
 		<td>Your password:</td>
 			<td>
-				<input type="number" name="password" />
+				<input type="text" name="password" />
 			</td>
 		</tr><tr>
 			<td colspan="2">

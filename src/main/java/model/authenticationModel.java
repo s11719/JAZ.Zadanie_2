@@ -1,13 +1,27 @@
 package model;
 
 
-public class authenticationModel extends userModel {
+public class authenticationModel {
     
     String username;
-    String password;
+    String password;           
+    
+    public String getUsername() {
+        return username;
+    }
+    
+    public void setUsername(String username) {
+        this.username = username;
+    }       
 
-    public authenticationModel(String username, String email, String role) {
-        super(username, email, role);
+    public String getPassword() {
+        return password;
+    }
+    
+    public void setPassword(String password) {
+        this.password = password;
     }
     
 }
+    
+
