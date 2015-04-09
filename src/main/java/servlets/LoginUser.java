@@ -1,19 +1,16 @@
-
 package servlets;
 
 import controller.*;
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 public class LoginUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    Login login = new Login();
+    LoginController login = new LoginController();
     
     public LoginUser() {
         super();        
@@ -24,8 +21,7 @@ public class LoginUser extends HttpServlet {
     }
 	
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-        login.loginUser(request);
+	login.loginUser(request);
 	
         response.sendRedirect("TestShowcase");		
     }

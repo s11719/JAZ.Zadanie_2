@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Login to existing account</title>
+<title>Log in to existing account</title>
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto Condensed:light">
     <style>
 	      body {
@@ -18,7 +18,7 @@
 		<tr>
 		<td>
 
-<div><h1>Log in with your credentials</h1></div>
+<div><h1>Log in to your account</h1></div>
 <p>
 <div style="color:#CF3212">	</div>
 </p>

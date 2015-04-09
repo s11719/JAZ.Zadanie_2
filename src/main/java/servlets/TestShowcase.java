@@ -31,23 +31,46 @@ public class TestShowcase extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {                
-            response.getWriter().println("Hello!");
+        response.getWriter().println("Hello!");
             
         HttpSession session = request.getSession();
         ServletContext context = request.getServletContext();
+        
+        credentialsRepository credentials = new credentialsRepository(request);
+        System.out.println("Object 'credentials' reference in TestShowcase class is " + Integer.toHexString(System.identityHashCode(credentials)));
             
-            System.out.println("Servlet is called " + getServletName());
-            System.out.println("Username: " + session.getAttribute("username"));
-            System.out.println("Email: " + session.getAttribute("email"));
-            System.out.println("User role: " + session.getAttribute("role"));  
+            //System.out.println("Servlet is called " + getServletName());
+            //System.out.println("Username: " + session.getAttribute("username"));
+            //System.out.println("Email: " + session.getAttribute("email"));
+            //System.out.println("User role: " + session.getAttribute("role"));  
             
         HashMap<String, userModel> userRepository = (HashMap<String, userModel>) context.getAttribute("userRepository");
         userModel user = userRepository.get(session.getAttribute("username"));
             
-        response.getWriter().println("User from list is called " + user.getUsername()); 
+        response.getWriter().println("User from list is called " + user.getUsername());
+        response.getWriter().println("User from POST is called " + request.getParameter("username"));
+        response.getWriter().println("User from session is called " + session.getAttribute("username"));
         response.getWriter().println("Number of users is " + userRepository.size());
+                       
+        HashMap<String, String> credentialsRepository = (HashMap<String, String>) context.getAttribute("credentialsRepository");
+        
+        response.getWriter().println("Size of credentialsRepository is " + credentialsRepository.size());
+                
+        response.getWriter().println(credentials.checkIfUserExists((String) session.getAttribute("username")));
+        response.getWriter().println(credentialsRepository.containsKey(session.getAttribute("username")));
+        
+               
+        if (credentialsRepository.containsKey(session.getAttribute("username"))) {
+            response.getWriter().println("if equals true");
         }
-
+        else {
+            response.getWriter().println("if equals false");
+        }
+               
+        
+        
+        }
+        
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

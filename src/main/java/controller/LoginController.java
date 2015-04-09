@@ -1,25 +1,18 @@
-
 package controller;
 
 import model.*;
-
 import java.util.HashMap;
-
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
-
-public class Login {    
+public class LoginController {    
     
-    public Login () {
+    public LoginController () {
         
     }    
     
     public void loginUser(HttpServletRequest request) {
-        HttpSession session = request.getSession();
         ServletContext context = request.getServletContext();
-        
         HashMap<String, userModel> userRepository = (HashMap<String, userModel>) context.getAttribute("userRepository");
         userModel user = userRepository.get(request.getParameter("username"));
         
