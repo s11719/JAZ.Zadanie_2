@@ -37,9 +37,9 @@
 				<input type="text" name="password" />
 			</td>
 		</tr><tr>
-			<td colspan="2">
+			<td colspan="5">
 				<input type="submit" value="Log in" />
-			</td>
+                        </td>        
 		</tr>
 	</table>
 		

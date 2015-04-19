@@ -18,7 +18,7 @@ public class RegistrationController {
         
         user.addUserToSession(request);
         
-        credentials.addCredentials(request.getParameter("username"), request.getParameter("password"));      
+        credentials.addCredentials(request.getParameter("username"), request.getParameter("password"));       
     }    
 	
 }

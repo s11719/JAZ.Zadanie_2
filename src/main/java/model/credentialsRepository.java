@@ -26,10 +26,10 @@ public class credentialsRepository {
         this.context.setAttribute("credentialsRepository", this.credentialsRepository);
     }    
     
-    public Boolean validateUser(String username, String password) {
-        String validation = this.credentialsRepository.get("username");
+    public Boolean validateUser(String username, String password) {     
+        String validation = this.credentialsRepository.get(username);       
         
-        if (validation == password) {
+        if (validation.equals(password)) {
             return true;
         }
         else {

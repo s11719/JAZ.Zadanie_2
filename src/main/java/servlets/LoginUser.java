@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginUser extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+    AuthenticationController authentication = new AuthenticationController();    
     LoginController login = new LoginController();
     
     public LoginUser() {
@@ -20,10 +21,14 @@ public class LoginUser extends HttpServlet {
 		
     }
 	
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	login.loginUser(request);
-	
-        response.sendRedirect("TestShowcase");		
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {        
+        if (request.getParameter("username") != "" && authentication.authenticateUser(request, request.getParameter("username"), request.getParameter("password"))) {
+            login.loginUser(request);
+            response.sendRedirect("TestShowcase");	
+        }
+        else {            
+            response.sendRedirect("login.jsp");
+        }             		
     }
     
 }

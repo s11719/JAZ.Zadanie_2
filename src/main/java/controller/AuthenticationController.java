@@ -18,7 +18,7 @@ public class AuthenticationController {
     
     public boolean authenticateUser(ServletRequest request, String username, String password) {
         credentialsRepository credentialsRepository = new credentialsRepository(request);
-        
+       
         return credentialsRepository.validateUser(username, password);
     }
     
