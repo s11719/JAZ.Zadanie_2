@@ -7,6 +7,7 @@ import model.*;
 import java.util.HashMap;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -50,6 +51,8 @@ public class TestShowcase extends HttpServlet {
         response.getWriter().println("User from list is called " + user.getUsername());
         response.getWriter().println("User from POST is called " + request.getParameter("username"));
         response.getWriter().println("User from session is called " + session.getAttribute("username"));
+        response.getWriter().println("User role is " + session.getAttribute("role"));
+        response.getWriter().println("User is Premium? " + session.getAttribute("premium"));
         response.getWriter().println("Number of users is " + userRepository.size());
                        
         HashMap<String, String> credentialsRepository = (HashMap<String, String>) context.getAttribute("credentialsRepository");
@@ -70,6 +73,8 @@ public class TestShowcase extends HttpServlet {
         
         
         }
+        
+   
         
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

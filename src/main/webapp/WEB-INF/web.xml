@@ -12,6 +12,10 @@
         <servlet-name>TestShowcase</servlet-name>
         <servlet-class>servlets.TestShowcase</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Premium</servlet-name>
+        <servlet-class>servlets.Premium</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterUser</servlet-name>
         <url-pattern>/RegisterUser</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>TestShowcase</servlet-name>
         <url-pattern>/TestShowcase</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Premium</servlet-name>
+        <url-pattern>/Premium</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

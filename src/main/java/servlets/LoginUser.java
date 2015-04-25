@@ -22,13 +22,20 @@ public class LoginUser extends HttpServlet {
     }
 	
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {        
-        if (request.getParameter("username") != "" && authentication.authenticateUser(request, request.getParameter("username"), request.getParameter("password"))) {
-            login.loginUser(request);
-            response.sendRedirect("TestShowcase");	
+        try {
+        
+            if (request.getParameter("username") != "" && authentication.authenticateUser(request, request.getParameter("username"), request.getParameter("password"))) {
+                login.loginUser(request);
+                response.sendRedirect("main_menu.jsp");	
+            }
+            else {            
+                response.sendRedirect("login.jsp");
+            }
         }
-        else {            
+        catch (NullPointerException exception) {
+            exception.printStackTrace();
             response.sendRedirect("login.jsp");
-        }             		
+        }
     }
     
 }

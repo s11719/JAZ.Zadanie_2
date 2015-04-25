@@ -20,7 +20,7 @@
 
 <div><h1>Register new account.</h1></div>
 <p>
-<div style="color:#CF3212">	</div>
+<div style="color:#CF3212">You can't provide existing username</div>
 </p>
 
 <p>	
@@ -51,8 +51,8 @@
 				<td>  		
      				<select name = "role">
     					<option value = "user">Standard user</option>
-   						<option value = "admin">System administrator</option>          
-   					</select>
+   					<option value = "admin">System administrator</option>          
+   				</select>
    				</td>
    			</tr><tr>
 			<td colspan="2">

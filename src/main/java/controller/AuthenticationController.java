@@ -1,6 +1,5 @@
 package controller;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletRequest;
 import model.credentialsRepository;
 

@@ -25,7 +25,7 @@ public class RegisterUser extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {       
         if (authentication.usernameFree(request, request.getParameter("username"))) {
             registration.registerNewUser(request);
-            response.sendRedirect("TestShowcase");
+            response.sendRedirect("main_menu.jsp");
         }
         else {            
             response.sendRedirect("register.jsp");

@@ -7,12 +7,14 @@ public class userModel {
 
     String username;
     String email;
-    String role;		
+    String role;
+    Boolean premium;
 
     public userModel(String username, String email, String role) {
 	this.username = username;
 	this.email = email;
 	this.role = role;
+        this.premium = false;
     }
 	
     public String getUsername() {
@@ -25,6 +27,10 @@ public class userModel {
 	
     public String getEmail() {
 	return email;
+    }
+    
+    public Boolean getPremium() {
+	return premium;
     }
 	
     public void setEmail(String email) {
@@ -39,12 +45,17 @@ public class userModel {
 	this.role = role;
     }
     
+    public void setPremium(Boolean premium) {
+        this.premium = premium;
+    }
+    
     public void addUserToSession(HttpServletRequest request){
         HttpSession session = request.getSession();
             
         session.setAttribute("username", this.username);
         session.setAttribute("email", this.email);
         session.setAttribute("role", this.role);
+        session.setAttribute("premium", this.premium);
     }    
 	
 }
