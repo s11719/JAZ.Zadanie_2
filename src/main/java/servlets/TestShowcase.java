@@ -8,6 +8,7 @@ import java.util.HashMap;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Set;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -70,6 +71,18 @@ public class TestShowcase extends HttpServlet {
             response.getWriter().println("if equals false");
         }
                
+        HashMap<String, addressModel> addressRepository = (HashMap<String, addressModel>) context.getAttribute("addressRepository");
+        addressModel registered_address = addressRepository.get(session.getAttribute("username") + "_registered");
+        
+        response.getWriter().println(registered_address.getCity());        
+        response.getWriter().println(addressRepository.keySet());
+        
+        
+        
+        
+        
+        
+        
         
         
         }

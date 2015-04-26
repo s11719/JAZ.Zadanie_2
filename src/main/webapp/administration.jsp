@@ -36,8 +36,8 @@
 
                                     if (!user.getPremium()) {
                                         out.println("<tr><td>");
-                                        out.println("Username: " + user.getUsername());
-                                        out.println("</td><td>Email: " + user.getEmail());
+                                        out.println("<b>Username: </b>" + user.getUsername());
+                                        out.println("</td><td><b>Email: </b>" + user.getEmail());
                                         out.println("</td><td><a href='Premium?username=" + user.getUsername() + "&premium=yes'>Start Premium access</a>");
                                         out.println("</td></tr>");
                                     }
@@ -53,8 +53,8 @@
 
                                     if (user.getPremium()) {
                                         out.println("<tr><td>");
-                                        out.println("Username: " + user.getUsername());
-                                        out.println("</td><td>Email: " + user.getEmail());
+                                        out.println("<b>Username: </b>" + user.getUsername());
+                                        out.println("</td><td><b>Email: </b>" + user.getEmail());
                                         out.println("</td><td><a href='Premium?username=" + user.getUsername() + "&premium=no'>Stop Premium access</a>");
                                         out.println("</td></tr>");
                                     }

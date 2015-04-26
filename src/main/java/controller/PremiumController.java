@@ -3,6 +3,7 @@ package controller;
 import java.util.HashMap;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 import model.userModel;
 
 public class PremiumController {
@@ -23,7 +24,11 @@ public class PremiumController {
             user.setPremium(false);
         }
         
-        user.addUserToSession(request);
+        HttpSession session = request.getSession();
+        
+        if (request.getParameter("username").equals(session.getAttribute("username"))) {
+            user.addUserToSession(request);
+        } 
     }
     
 }

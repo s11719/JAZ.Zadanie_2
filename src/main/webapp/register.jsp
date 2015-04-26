@@ -18,7 +18,7 @@
 		<tr>
 		<td>
 
-<div><h1>Register new account.</h1></div>
+<div><h1>Register new account</h1></div>
 <p>
 <div style="color:#CF3212">You can't provide existing username</div>
 </p>
@@ -29,25 +29,25 @@
 	<table cellpadding="10"><tr>
 		<td>Your new username:</td>
 			<td>
-				<input type="text" name="username" />
+				<input type="text" name="username" required/>
 			</td>
 		</tr><tr>
 		<td>Your new password:</td>
 			<td>
-				<input type="text" name="password" />
+				<input type="password" name="password" required/>
 			</td>
 		</tr><tr>
 		<td>Confirm your password:</td>
 			<td>
-				<input type="text" name="password_confirm" />
+				<input type="password" name="password_confirm" required/>
 			</td>
 		</tr><tr>
 		<td>Provide your email:</td>
 			<td>
-				<input type="text" name="email" />
+				<input type="email" name="email" required/>
 			</td>
 		</tr><tr>
-		<td>What role you want?</td>
+		<td>What role do you want?</td>
 				<td>  		
      				<select name = "role">
     					<option value = "user">Standard user</option>
